@@ -1,0 +1,71 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f0f2f5;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+}  
+
+.container {  
+    text-align: center; /* Center align facebook logo and subtitle */  
+}  
+
+.logo {  
+    color: #1877f2;  
+    margin-bottom: 10px; /* Space between logo and form */  
+}  
+
+.form-box {  
+    background-color: white;  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    display: inline-block; /* Make sure the box adjusts to its content */  
+}  
+
+h2 {  
+    margin: 0; /* Remove default margin */  
+}  
+
+.subtitle {  
+    margin: 10px 0 20px; /* Center and space subtitle */  
+}  
+
+input, select, button {  
+    width: 100%;  
+    padding: 10px;  
+    margin: 10px 0;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+}  
+
+button {  
+    background-color: #28a745;  
+    color: white;  
+    border: none;  
+    cursor: pointer;  
+}  
+
+button:hover {  
+    background-color: #218838;  
+}  
+
+/* Flexbox styles for side-by-side input fields */  
+.name-container, .gender-container {  
+    display: flex;  
+    justify-content: space-between;  
+}  
+
+.name-container input {  
+    width: 48%; /* Adjusted to fit side by side */  
+}  
+
+.gender-container {  
+    margin: 10px 0;  
+}  
+
+.gender-container label {  
+    margin-right: 15px; /* Adjust spacing between gender options */  
+}
