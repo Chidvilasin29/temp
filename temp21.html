@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,8 +48,11 @@
         color: white;
         background-color: green;
         font-size: 20px;
-        padding: 10px;
-        border-radius: 20px;
+        padding: 5px;
+        border-radius: 2px;
+        width: 200px;
+        border: none;
+        margin: 5px;
       }
       .leftCaption {
         color: gray;
@@ -120,8 +124,8 @@
         let str = `
       
       <div class="row">
-        <input type="text" placeholder="Firstname" />
-        <input type="text" placeholder="Surname" />
+        <input type="text" id="firstname" placeholder="Firstname" />
+        <input type="text" id="surname" placeholder="Surname" />
       </div>
       <div class="row" style="justify-content: start">
         <div class="leftCaption">
@@ -145,17 +149,66 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Female</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
-            <div><label> Male</label></div>
-                <div><input type="radio" name="gender" /></div>
+          <div><label> Male</label></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
-            <div><label> Custom</label></div>
-            <div><input type="radio" name="gender" /></div>
+          <div><label> Custom</label></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
       </div>
-    </div>
+
+     <div class="row">
+      <select id="prSelect" style="display:none">
+        <option value="NA">Select your pronoun</option>
+        <option value="She">She:"Wish her a happy birthday"</option>
+        <option value="He">He:"Wish him a happy birthday"</option>
+        <option value="They">They:"Wish them a happy birthday"</option>
+      </select>
+     </div>
+
+      <div class="row">
+        <input type="text" id="email" placeholder="Mobile number or email address" />
+      </div>
+      <div class="row">
+        <input type="password" id="password" placeholder="New password" />
+      </div>
+      <div class="row">
+        <button onclick='showData()'>Sign Up</button>
+      </div>
+      `;
+        root.innerHTML = str;
+      };
+
+      showForm();
+      let str = "";
+      for (let i = 1; i <= 31; i++) {
+        str += `<option>${i}</option>`;
+      }
+      day.innerHTML = str;
+      str = "";
+      for (let i = 1; i <= 12; i++) {
+        str += `<option>${i}</option>`;
+      }
+      month.innerHTML = str;
+      str = "";
+      for (let i = 1905; i <= 2025; i++) {
+        str += `<option>${i}</option>`;
+      }
+      year.innerHTML = str;
+
+      const togglePronoun = () => {
+        let p = document.getElementsByName("gender");
+        if (p[2].checked) {
+          prSelect.style.display = "block";
+        } else {
+          prSelect.style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>
+                                
